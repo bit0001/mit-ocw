@@ -46,6 +46,7 @@ node_t* delete_value(int value, node_t* current_head, int* succeeded) {
         *succeeded = 1;
         return current_head;
       } else {
+        prev = current;
         current = current->next_node;
       }
     }
