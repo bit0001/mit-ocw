@@ -1,12 +1,8 @@
+#ifndef SINGLY_LINKED_LIST_H
+#define SINGLY_LINKED_LIST_H
+
 /*
  * Define a node structure.
- * 
- * Doing this is the same as doing:
- * struct node {
- *    int val;
- *    struct node* next;
- * };
- * typedef struct node node_t;
  */
 typedef struct node {
   int val;
@@ -38,3 +34,5 @@ void delete_list(node_t* head);
 
 /* Given a pointer to the head, prints all o fthe values in a list. */
 void print_sll(node_t* head);
+
+#endif
