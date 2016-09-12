@@ -1,30 +1,30 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <iostream>
 #include "singly_linked_list.h"
 
 /* Returns a new node with the given value. */
-node_t* make_node(int val) {
+node_t* make_node(int value) {
   node_t* new_node = malloc(sizeof(node_t));
-  new_node->val = val;
+  new_node->value = value;
   new_node->next = NULL;
   return new_node;
 }
 
 /* Insert at the head of a linked list. */
-node_t* insert_val(int val, node_t* cur_head) {
-  node_t* new_node = make_node(val);
+node_t* insert_value(int value, node_t* cur_head) {
+  node_t* new_node = make_node(value);
   new_node->next = cur_head;
   return new_node;
 }
 
-/* Deletes the first occurence of value val from the list. */
-node_t* delete_val(int val, node_t* cur_head, int* succeeded) {
+/* Deletes the first occurence of value from the list. */
+node_t* delete_value(int value, node_t* cur_head, int* succeeded) {
   *succeeded = 0;
 
   /* Special case: if first guy is the one we want to remove. */
   if (cur_head == NULL) {
     return NULL;
-  } else if (cur_head->val == val) {
+  } else if (cur_head->value == value) {
     node_t* new_head = cur_head->next;
     free(cur_head);
     *succeeded = 1;
@@ -33,7 +33,7 @@ node_t* delete_val(int val, node_t* cur_head, int* succeeded) {
     node_t* prev = cur_head;
     node_t* cur = cur_head->next;
     while (cur != NULL) {
-      if (cur->val == val) {
+      if (cur->value == value) {
         prev->next = cur->next;
         free(cur);
         *succeeded = 1;
@@ -50,7 +50,7 @@ node_t* delete_val(int val, node_t* cur_head, int* succeeded) {
 void delete_list(node_t* head) {
   node_t* cur = head;
   node_t* next;
-  
+
   while (cur != NULL) {
     /* Store our next one. */
     next = cur->next;
@@ -67,7 +67,7 @@ void delete_list(node_t* head) {
 void print_sll(node_t* head) {
   node_t* cur = head;
   while (cur != NULL) {
-    printf ("%d ", cur->val);
+    printf ("%d ", cur->value);
     cur = cur->next;
   }
   printf("\n");
