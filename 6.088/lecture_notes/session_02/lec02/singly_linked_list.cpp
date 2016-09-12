@@ -4,11 +4,11 @@
 
 /* Returns a new node with the given value. */
 node_t* make_node(int value) {
-  node_t* new_node = malloc(sizeof(node_t));
+  node_t* new_node = (node_t *) malloc(sizeof(node_t));
 
   if (new_node != NULL) {
     new_node->value = value;
-    new_node->next = NULL;
+    new_node->next_node = NULL;
   }
 
   return new_node;
@@ -18,7 +18,7 @@ node_t* make_node(int value) {
 node_t* insert_value(int value, node_t* current_head) {
   node_t* new_head = make_node(value);
   if (new_head != NULL) {
-    new_head->next = current_head;
+    new_head->next_node = current_head;
   }
 
   return new_head;
@@ -32,21 +32,21 @@ node_t* delete_value(int value, node_t* current_head, int* succeeded) {
   if (current_head == NULL) {
     return NULL;
   } else if (current_head->value == value) {
-    node_t* new_head = current_head->next;
+    node_t* new_head = current_head->next_node;
     free(current_head);
     *succeeded = 1;
     return new_head;
   } else {
     node_t* prev = current_head;
-    node_t* current = current_head->next;
+    node_t* current = current_head->next_node;
     while (current != NULL) {
       if (current->value == value) {
-        prev->next = current->next;
+        prev->next_node = current->next_node;
         free(current);
         *succeeded = 1;
         return current_head;
       } else {
-        current = current->next;
+        current = current->next_node;
       }
     }
   }
@@ -60,7 +60,7 @@ void delete_list(node_t* head) {
 
   while (current != NULL) {
     /* Store our next one. */
-    next = current->next;
+    next = current->next_node;
 
     /* Free the current guy. */
     free(current);
@@ -75,7 +75,7 @@ void print_sll(node_t* head) {
   node_t* current = head;
   while (current != NULL) {
     printf ("%d ", current->value);
-    current = current->next;
+    current = current->next_node;
   }
   printf("\n");
   return;
