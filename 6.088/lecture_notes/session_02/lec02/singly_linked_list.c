@@ -38,15 +38,15 @@ node_t* delete_value(int value, node_t* current_head, int* succeeded) {
     return new_head;
   } else {
     node_t* prev = current_head;
-    node_t* cur = current_head->next;
-    while (cur != NULL) {
-      if (cur->value == value) {
-        prev->next = cur->next;
-        free(cur);
+    node_t* current = current_head->next;
+    while (current != NULL) {
+      if (current->value == value) {
+        prev->next = current->next;
+        free(current);
         *succeeded = 1;
         return current_head;
       } else {
-        cur = cur->next;
+        current = current->next;
       }
     }
   }
@@ -55,27 +55,27 @@ node_t* delete_value(int value, node_t* current_head, int* succeeded) {
 
 /* Frees the memory associated with a linked list. */
 void delete_list(node_t* head) {
-  node_t* cur = head;
+  node_t* current = head;
   node_t* next;
 
-  while (cur != NULL) {
+  while (current != NULL) {
     /* Store our next one. */
-    next = cur->next;
+    next = current->next;
 
     /* Free the current guy. */
-    free(cur);
+    free(current);
 
     /* Move on. */
-    cur = next;
+    current = next;
   }
 }
 
 /* Prints a linked list. */
 void print_sll(node_t* head) {
-  node_t* cur = head;
-  while (cur != NULL) {
-    printf ("%d ", cur->value);
-    cur = cur->next;
+  node_t* current = head;
+  while (current != NULL) {
+    printf ("%d ", current->value);
+    current = current->next;
   }
   printf("\n");
   return;

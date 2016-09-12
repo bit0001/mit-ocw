@@ -5,26 +5,26 @@
  * Define a node structure.
  */
 typedef struct node {
-  int val;
-  struct node* next;
+  int value;
+  struct node* next_node;
 } node_t;
 
 /*
  * Creates a new node from a given value, allocating heap memory for it.
  */
-node_t* make_node(int val);
+node_t* make_node(int value);
 
 /*
  * Inserts a new value into a given linked list, allocating heap memory for it.
  */
-node_t* insert_val(int val, node_t* cur_head);
+node_t* insert_value(int value, node_t* current_head);
 
 /*
  * Deletes the first value with the given value, deallocating the associated
  * memory.  Sets the "succeeded" flag to 1 if it found and deleted the value, 0
  * otherwise.
  */
-node_t* delete_val(int val, node_t* cur_head, int* succeeded);
+node_t* delete_value(int value, node_t* current_head, int* succeeded);
 
 /*
  * Given a pointer to the head, frees the memory associated with an entire list.
