@@ -73,6 +73,12 @@ void delete_list(node_t* head) {
 
 /* Prints a linked list. */
 void print_singly_linked_list(node_t* head) {
+
+  if (head == NULL) {
+    puts("Empty list!");
+    return;
+  }
+
   node_t* current = head;
   while (current != NULL) {
     printf ("%d ", current->value);
