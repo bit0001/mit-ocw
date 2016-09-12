@@ -11,9 +11,12 @@
  * Now try printing numbers and other things!
  * http://www.cplusplus.com/reference/clibrary/cstdio/printf/
  */
-#include <stdio.h>
+#include <iostream>
 
-int main () {
-  printf ("Hello world!\n");
-  return 0;
+using namespace std;
+
+int main ()
+{
+    cout << "Hello, World!" << endl;
+    return 0;
 }
