@@ -1,5 +1,19 @@
-all:
-	g++ -Wall -Wextra hello_world.cpp -o hello_world
+CC=g++
+CFLAGS=-c -Wall -Wextra
+
+all: hello_time
+
+hello_time: main.o hello_world.o current_time.o
+	$(CC) main.o hello_world.o current_time.o -o hello_time
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp
+
+hello_world.o: hello_world.cpp
+	$(CC) $(CFLAGS) hello_world.cpp
+
+current_time.o: current_time.cpp
+	$(CC) $(CFLAGS) current_time.cpp
 
 clean:
-	rm hello_world
+	rm *.o hello_time
