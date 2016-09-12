@@ -15,8 +15,7 @@ typedef struct node {
 node_t* make_node(int val);
 
 /*
- * Inserts a new value into a given linked list, allocating heap memory for
- * it.
+ * Inserts a new value into a given linked list, allocating heap memory for it.
  */
 node_t* insert_val(int val, node_t* cur_head);
 
