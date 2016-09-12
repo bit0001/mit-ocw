@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c -Wall -Wextra
+CFLAGS=-c -g -Wall -Wextra
 
 all: linked_lists
 
