@@ -32,6 +32,6 @@ node_t* delete_value(int value, node_t* current_head, int* succeeded);
 void delete_list(node_t* head);
 
 /* Given a pointer to the head, prints all o fthe values in a list. */
-void print_sll(node_t* head);
+void print_singly_linked_list(node_t* head);
 
 #endif

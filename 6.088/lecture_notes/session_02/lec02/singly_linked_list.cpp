@@ -71,7 +71,7 @@ void delete_list(node_t* head) {
 }
 
 /* Prints a linked list. */
-void print_sll(node_t* head) {
+void print_singly_linked_list(node_t* head) {
   node_t* current = head;
   while (current != NULL) {
     printf ("%d ", current->value);
