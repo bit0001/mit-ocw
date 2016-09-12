@@ -8,7 +8,9 @@ void print_deletion_message(bool succeeded);
 int main()
 {
     int values[NUMBER_OF_VALUES] = {1, 0, -1, 5, 10};
-    node_t* head;
+    node_t* head = NULL;
+
+    print_singly_linked_list(head);
 
     for (int i = 0; i < NUMBER_OF_VALUES; i++) {
       head = insert_value(values[i], head);
@@ -31,6 +33,11 @@ int main()
     print_deletion_message(succeeded);
     print_singly_linked_list(head);
 
+    delete_list(head);
+    head = NULL;
+    print_singly_linked_list(head);
+
+
     return 0;
 }
 
@@ -39,6 +46,6 @@ void print_deletion_message(bool succeeded)
     if (succeeded) {
         puts("Deletion successful!");
     } else {
-        puts("Deletion unsuccessful!");
+        puts("Value not found!");
     }
 }
