@@ -6,15 +6,15 @@
  * Creates a new node from a given value, allocating heap memory for it.
  */
 node_t* make_tree_node(int value) {
-  node_t* new_tree = (node_t*) malloc(sizeof(node_t));
+  node_t* new_tree_node = (node_t*) malloc(sizeof(node_t));
 
-  if (new_tree != NULL) {
-    new_tree->value = value;
-    new_tree->left_node = NULL;
-    new_tree->right_node = NULL;
+  if (new_tree_node != NULL) {
+    new_tree_node->value = value;
+    new_tree_node->left_node = NULL;
+    new_tree_node->right_node = NULL;
   }
 
-  return new_tree;
+  return new_tree_node;
 }
 
 /*
