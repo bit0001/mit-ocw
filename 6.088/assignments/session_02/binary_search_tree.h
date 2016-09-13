@@ -18,16 +18,16 @@ node_t* make_tree_node(int value);
  * Inserts a new value into a given binary search tree, allocating heap memory
  * for it.
  */
-node_t* insert_value(int value, node_t* cur_root);
+node_t* insert_value(int value, node_t* current_root);
 
 bool find_value(int value, node_t* root);
 
 /*
  * Given a pointer to the root, frees the memory associated with an entire list.
  */
-void delete_bst(node_t* root);
+void delete_binary_search_tree(node_t* root);
 
 /* Given a pointer to the root, prints all of the values in a tree. */
-void print_bst(node_t* root);
+void print_binary_search_tree(node_t* root);
 
 #endif

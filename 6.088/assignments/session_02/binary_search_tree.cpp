@@ -21,8 +21,7 @@ node_t* make_tree_node(int value) {
  * Inserts a new value into a given binary search tree, allocating heap memory
  * for it.
  */
-node_t* insert_value(int value, node_t* cur_root) {
-  /* YOUR CODE HERE */
+node_t* insert_value(int value, node_t* current_root) {
 }
 
 bool find_value(int value, node_t* root) {
