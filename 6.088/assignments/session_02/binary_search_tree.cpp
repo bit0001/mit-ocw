@@ -7,9 +7,13 @@
  */
 node_t* make_tree_node(int value) {
   node_t* new_tree = (node_t*) malloc(sizeof(node_t));
-  new_tree->value = value;
-  new_tree->left_node = NULL;
-  new_tree->right_node = NULL;
+
+  if (new_tree != NULL) {
+    new_tree->value = value;
+    new_tree->left_node = NULL;
+    new_tree->right_node = NULL;
+  }
+
   return new_tree;
 }
 
@@ -28,16 +32,16 @@ bool find_value(int value, node_t* root) {
 /*
  * Given a pointer to the root, frees the memory associated with an entire tree.
  */
-void delete_bst(node_t* root) {
+void delete_binary_search_tree(node_t* root) {
   /* YOUR CODE HERE */
 }
 
 /* Given a pointer to the root, prints all o fthe values in a tree. */
-void print_bst(node_t* root) {
+void print_binary_search_tree(node_t* root) {
   if (root != NULL) {
     printf("%d ", root->value);
-    print_bst(root->left_node);
-    print_bst(root->right_node);
+    print_binary_search_tree(root->left_node);
+    print_binary_search_tree(root->right_node);
   }
   return;
 }
