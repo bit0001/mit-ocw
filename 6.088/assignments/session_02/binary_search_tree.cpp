@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "bst.h"
+#include "binary_search_tree.h"
 
 /*
  * Creates a new node from a given value, allocating heap memory for it.
  */
 node_t* make_tree(int val) {
-  node_t* new_tree = malloc(sizeof(node_t));
+  node_t* new_tree = (node_t*) malloc(sizeof(node_t));
   new_tree->val = val;
   new_tree->left = NULL;
   new_tree->right = NULL;
