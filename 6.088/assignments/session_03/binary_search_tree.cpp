@@ -28,10 +28,27 @@ void initialize_tree(binary_search_tree_t* tree) {
   }
 }
 
+/*
+ * Inserts a new value into a given tree.
+ */
+void insert(int value, binary_search_tree_t* tree) {
+  int index = 0;
+  while (true) {
+    if (tree->values[index] == INT_MIN) {
+      tree->values[index] = value;
+      return;
+    }
+    index = (tree->values[index] > value) ? 2 * index + 1 : 2 * index + 2;
+  }
+}
+
 /* Given a pointer to the root, prints all of the values in a list. */
 void print_binary_search_tree(binary_search_tree_t* tree) {
   for (int i = 0; i < tree->size; ++i) {
-    printf("%d\t", tree->values[i]);
+    int current_value = tree->values[i];
+    if (current_value != INT_MIN) {
+      printf("%d\t", tree->values[i]);
+    }
   }
   puts("");
 }
