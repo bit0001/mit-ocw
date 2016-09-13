@@ -1,5 +1,5 @@
-typedef enum {FALSE=0, TRUE=1} bool;
-
+#ifndef BINARY_SEARCH_TREE
+#define BINARY_SEARCH_TREE
 /*
  * Define a tree structure.
  */
@@ -33,3 +33,5 @@ void delete_bst(bst_t* tree);
 
 /* Given a pointer to the root, prints all of the values in a list. */
 void print_bst(bst_t* tree);
+
+#endif
