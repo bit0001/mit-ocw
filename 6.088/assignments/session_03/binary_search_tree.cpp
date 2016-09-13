@@ -33,13 +33,24 @@ void initialize_tree(binary_search_tree_t* tree) {
  */
 void insert(int value, binary_search_tree_t* tree) {
   int index = 0;
-  while (true) {
+  while (index < tree->size) {
     if (tree->values[index] == INT_MIN) {
       tree->values[index] = value;
       return;
     }
     index = (tree->values[index] > value) ? 2 * index + 1 : 2 * index + 2;
   }
+}
+
+bool find_value(int value, binary_search_tree_t* tree) {
+  int index = 0;
+  while (index < tree->size) {
+    if (tree->values[index] == value) {
+      return true;
+    }
+    index = (tree->values[index] > value) ? 2 * index + 1 : 2 * index + 2;
+  }
+  return false;
 }
 
 /* Given a pointer to the root, prints all of the values in a list. */
