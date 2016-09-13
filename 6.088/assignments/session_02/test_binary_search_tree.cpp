@@ -46,7 +46,9 @@ int main() {
   */
 
   /* Delete the list. */
-  //delete_bst(cur);
+  delete_binary_search_tree(cur);
+  cur = NULL;
+  print_binary_search_tree(cur);
 
   return 0;
 }
