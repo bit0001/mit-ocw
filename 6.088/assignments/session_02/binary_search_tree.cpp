@@ -22,10 +22,33 @@ node_t* make_tree_node(int value) {
  * for it.
  */
 node_t* insert_value(int value, node_t* current_root) {
+  if (current_root->value > value) {
+    if (current_root->left_node == NULL) {
+      current_root->left_node = make_tree_node(value);
+      return current_root;
+    }
+    insert_value(value, current_root->left_node);
+  } else {
+    if (current_root->right_node == NULL) {
+      current_root->right_node = make_tree_node(value);
+      return current_root;
+    }
+    insert_value(value, current_root->right_node);
+  }
+  return current_root;
 }
 
 bool find_value(int value, node_t* root) {
-  /* YOUR CODE HERE */
+  if (root == NULL) {
+    return false;
+  }
+  if (root->value == value) {
+    return true;
+  } else if (root->value > value) {
+    return find_value(value, root->left_node);
+  } else {
+    return find_value(value, root->right_node);
+  }
 }
 
 /*
