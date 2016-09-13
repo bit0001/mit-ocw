@@ -55,7 +55,12 @@ bool find_value(int value, node_t* root) {
  * Given a pointer to the root, frees the memory associated with an entire tree.
  */
 void delete_binary_search_tree(node_t* root) {
-  /* YOUR CODE HERE */
+  if (root == NULL) {
+    return;
+  }
+  delete_binary_search_tree(root->left_node);
+  delete_binary_search_tree(root->right_node);
+  free(root);
 }
 
 /* Given a pointer to the root, prints all o fthe values in a tree. */
