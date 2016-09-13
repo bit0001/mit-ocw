@@ -5,11 +5,11 @@
 /*
  * Creates a new node from a given value, allocating heap memory for it.
  */
-node_t* make_tree(int val) {
+node_t* make_tree_node(int value) {
   node_t* new_tree = (node_t*) malloc(sizeof(node_t));
-  new_tree->val = val;
-  new_tree->left = NULL;
-  new_tree->right = NULL;
+  new_tree->value = value;
+  new_tree->left_node = NULL;
+  new_tree->right_node = NULL;
   return new_tree;
 }
 
@@ -17,11 +17,11 @@ node_t* make_tree(int val) {
  * Inserts a new value into a given binary search tree, allocating heap memory
  * for it.
  */
-node_t* insert(int val, node_t* cur_root) {
+node_t* insert_value(int value, node_t* cur_root) {
   /* YOUR CODE HERE */
 }
 
-bool find_val(int val, node_t* root) {
+bool find_value(int value, node_t* root) {
   /* YOUR CODE HERE */
 }
 
@@ -35,9 +35,9 @@ void delete_bst(node_t* root) {
 /* Given a pointer to the root, prints all o fthe values in a tree. */
 void print_bst(node_t* root) {
   if (root != NULL) {
-    printf("%d ", root->val);
-    print_bst(root->left);
-    print_bst(root->right);
+    printf("%d ", root->value);
+    print_bst(root->left_node);
+    print_bst(root->right_node);
   }
   return;
 }
