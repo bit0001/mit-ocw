@@ -4,39 +4,49 @@
 
 int main() {
   /* Insert 0. */
-  node_t* cur = make_tree(1);
-  print_bst(cur);
+  node_t* cur = make_tree_node(1);
+  print_binary_search_tree(cur);
   printf("\n");
-  assert(find_val(1, cur) == true);
+  assert(find_value(1, cur) == true);
 
   /* Insert 1. */
-  cur = insert(0, cur);
-  assert(find_val(0, cur) == true);
-  print_bst(cur);
+  cur = insert_value(0, cur);
+  assert(find_value(0, cur) == true);
+  print_binary_search_tree(cur);
   printf("\n");
 
   /* Insert 2. */
-  cur = insert(2, cur);
-  assert(find_val(2, cur) == true);
+  cur = insert_value(2, cur);
+  assert(find_value(2, cur) == true);
 
   /* Print the tree. */
-  print_bst(cur);
+  print_binary_search_tree(cur);
   printf("\n");
 
   /* Insert 4. */
-  cur = insert(4, cur);
-  assert(find_val(4, cur) == true);
+  cur = insert_value(4, cur);
+  assert(find_value(4, cur) == true);
 
   /* Insert 3 */
-  cur = insert(3, cur);
-  assert(find_val(3, cur) == true);
-  print_bst(cur);
+  cur = insert_value(3, cur);
+  assert(find_value(3, cur) == true);
+  print_binary_search_tree(cur);
   printf("\n");
 
   /* ADD YOUR TESTS HERE. */
+  /*
+  node_t* root = make_tree_node(1);
+  print_binary_search_tree(root);
+  puts("");
+  root = insert_value(2, root);
+  root = insert_value(3, root);
+  root = insert_value(0, root);
+  print_binary_search_tree(root);
+  puts("");
+  */
 
   /* Delete the list. */
-  delete_bst(cur);
+  //delete_bst(cur);
 
   return 0;
 }
