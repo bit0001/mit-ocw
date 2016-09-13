@@ -53,12 +53,28 @@ bool find_value(int value, binary_search_tree_t* tree) {
   return false;
 }
 
+/*
+ * Given a pointer to the root, frees the memory associated with an entire list.
+ */
+void delete_binary_search_tree(binary_search_tree_t* tree) {
+  if (tree != NULL) {
+    free(tree->values);
+    free(tree);
+  }
+}
+
 /* Given a pointer to the root, prints all of the values in a list. */
 void print_binary_search_tree(binary_search_tree_t* tree) {
+  if (tree == NULL) {
+    return;
+  }
+
   for (int i = 0; i < tree->size; ++i) {
     int current_value = tree->values[i];
     if (current_value != INT_MIN) {
       printf("%d\t", tree->values[i]);
+    } else {
+      printf("X\t");
     }
   }
   puts("");
