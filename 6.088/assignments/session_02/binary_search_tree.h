@@ -1,3 +1,5 @@
+#ifndef BINARY_SEARCH_TREE_H
+#define BINARY_SEARCH_TREE_H
 /*
  * Define a node structure.
  */
@@ -27,3 +29,5 @@ void delete_bst(node_t* root);
 
 /* Given a pointer to the root, prints all of the values in a tree. */
 void print_bst(node_t* root);
+
+#endif
