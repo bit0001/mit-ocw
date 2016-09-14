@@ -10,7 +10,6 @@ private:
 public:
   Person();
   Person(std::string lastname);
-  Person(char * first_name);
   Person(std::string lastname, char * first_name);
   void show();
   void show_formally();
