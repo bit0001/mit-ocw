@@ -10,3 +10,10 @@ In this assignment, you will re-implement the binary search tree using C++ class
   4.3. There are an infinite number of BSTs in this universe (theoretically), so it is impossible to test that your code works for all BSTs. What approach did you take to make sure it's correct? Are your test cases sufficient, and how do you know?
 
 5. Submit all of your files (*.h, *.cc, answers.txt) in a compressed .zip or .tar.gz file, along with a README describing (1) the command(s) you used to compile your program and (2) the command(s) you used to test your program. If you choose to include tests, you should also describe them. If you used a Makefile, please include that as well.
+
+### Answers
+4.1 The main difference between this implementation and the other ones is the use of the Client/Server model which implies that the client has no idea about the implementation of the classes made by the server. The difference between this and the array-based implementation is that this one could be used for every binary tree, while the array-based is just useful for complete binary trees. Using an OOP approach gives the client enough information to use the tools created by the server. Although this code used that was written in previous assignments, when using a struct implementation the client did not have so clear information, so he had to check how the struct was implemented in order to use the functions.
+
+4.2 The representation invariant is to make sure that the values from the left of a node is less than this value, and the values from the right of the node are greater or equal to this value. The way to make sure that the representation invariant holds is to implement a similar function to print, that instead of printing checks that the previous value is less than the current one.
+
+4.3 One way to test a binary search tree is to implement an in-order function to print its content, so you can see if the tree is really printing the values in order (ascending/descending).
