@@ -6,7 +6,7 @@ BankAccount::BankAccount() {
   m_balance = 0.00;
 }
 
-BankAccount::BankAccount(string name, double balance) {
+BankAccount::BankAccount(std::string name, double balance) {
   m_name = name;
   m_balance = balance;
 }
