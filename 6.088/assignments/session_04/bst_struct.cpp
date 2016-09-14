@@ -66,8 +66,8 @@ void delete_binary_search_tree(node_t* root) {
 /* Given a pointer to the root, prints all o fthe values in a tree. */
 void print_binary_search_tree(node_t* root) {
   if (root != NULL) {
-    printf("%d ", root->value);
     print_binary_search_tree(root->left_node);
+    printf("%d ", root->value);
     print_binary_search_tree(root->right_node);
   }
   return;
