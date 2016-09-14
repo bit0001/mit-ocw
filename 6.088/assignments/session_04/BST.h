@@ -1,12 +1,14 @@
 #ifndef BST_H
 #define BST_H
 
+#include "bst_struct.h"
 /*
  * Binary search tree
  */
 class BST {
-
- public:
+private:
+  node_t* m_root;
+public:
 
   // DO NOT change the declarations of the given methods.
 
