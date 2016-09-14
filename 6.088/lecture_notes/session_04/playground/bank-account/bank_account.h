@@ -9,8 +9,8 @@ public:
   BankAccount();
   BankAccount(std::string name, double balance);
   void display_information();
-  void deposit(int amount);
-  void withdraw(int amount);
-}
+  void deposit(double amount);
+  void withdraw(double amount);
+};
 
 #endif
