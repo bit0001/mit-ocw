@@ -22,18 +22,12 @@ node_t* make_tree_node(int value) {
  * for it.
  */
 node_t* insert_value(int value, node_t* current_root) {
-  if (current_root->value > value) {
-    if (current_root->left_node == NULL) {
-      current_root->left_node = make_tree_node(value);
-      return current_root;
-    }
-    insert_value(value, current_root->left_node);
+  if (current_root == NULL) {
+    return make_tree_node(value);
+  } else if (value < current_root->value) {
+    current_root->left_node = insert_value(value, current_root->left_node);
   } else {
-    if (current_root->right_node == NULL) {
-      current_root->right_node = make_tree_node(value);
-      return current_root;
-    }
-    insert_value(value, current_root->right_node);
+    current_root->right_node = insert_value(value, current_root->right_node);
   }
   return current_root;
 }
