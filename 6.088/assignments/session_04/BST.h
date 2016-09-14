@@ -16,11 +16,11 @@ class BST {
   // destructor
   ~BST();
 
-  // inserts "val" into the tree
-  void insert(int val);
+  // inserts "value" into the tree
+  void insert(int value);
 
-  // returns true if and only if "val" exists in the tree.
-  bool find(int val);
+  // returns true if and only if "value" exists in the tree.
+  bool find(int value);
 
   // prints the tree elements in the in-order traversal order
   void print_inorder();
