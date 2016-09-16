@@ -16,3 +16,5 @@ std::string Animal::get_name() {
 int Animal::get_age() {
   return age;
 }
+
+Animal::Animal() {}
