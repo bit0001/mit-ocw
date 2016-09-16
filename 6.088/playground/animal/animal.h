@@ -8,6 +8,8 @@ private:
 public:
   void eat();
   void sleep();
+  std::string get_name();
+  int get_age();
 };
 
 #endif

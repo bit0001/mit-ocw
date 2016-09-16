@@ -8,3 +8,11 @@ void Animal::eat() {
 void Animal::sleep() {
   std::cout << "Zzzz..." << std::endl;
 }
+
+std::string Animal::get_name() {
+  return this->name;
+}
+
+int Animal::get_age() {
+  return age;
+}
