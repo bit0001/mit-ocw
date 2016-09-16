@@ -13,4 +13,4 @@ animal.o: animal.cpp
 	$(CC) $(CFLAGS) animal.cpp
 
 clean:
-	rm *.o test
+	rm *.o test && rm -r test.dSYM/
