@@ -1,10 +1,10 @@
 #include <iostream>
 #include "animal.h"
 
-using namespace std;
-
 int main() {
-  cout << "Hello, World!" << endl;
+  Animal cat;
+  cat.eat();
+  cat.sleep();
 
   return 0;
 }
