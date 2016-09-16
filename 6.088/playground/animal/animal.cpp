@@ -1,6 +1,17 @@
 #include <iostream>
 #include "animal.h"
 
+Animal::Animal() {
+  this->name = "";
+  this->age = 0;
+}
+
+Animal::Animal(std::string name, int age) {
+  this->name = name;
+  this->age = age;
+}
+
+
 void Animal::eat() {
   std::cout << "Eating..." << std::endl;
 }
@@ -16,5 +27,3 @@ std::string Animal::get_name() {
 int Animal::get_age() {
   return age;
 }
-
-Animal::Animal() {}

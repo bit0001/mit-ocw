@@ -8,5 +8,11 @@ int main() {
   std::cout << "This is" << cat.get_name() << "empty" << std::endl;
   std::cout << "This is" << cat.get_age() << "empty" << std::endl;
 
+  Animal dog("Dog", 10);
+  dog.eat();
+  std::cout << "This is" << dog.get_name() << "empty" << std::endl;
+  std::cout << "This is" << dog.get_age() << "empty" << std::endl;
+
+
   return 0;
 }
