@@ -12,6 +12,7 @@ public:
   void sleep();
   std::string get_name();
   int get_age();
+  friend std::ostream & operator<<(std::ostream & os, const Animal & o);
 };
 
 #endif

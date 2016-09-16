@@ -27,3 +27,8 @@ std::string Animal::get_name() {
 int Animal::get_age() {
   return age;
 }
+
+std::ostream & operator<<(std::ostream & os, const Animal & o) {
+  os << "Name: " << o.name << "\nAge: " << o.age << std::endl;
+  return os;
+}
