@@ -1,3 +1,4 @@
+#include <iostream>
 #include "mammal.h"
 
 Mammal::Mammal() {
@@ -7,13 +8,13 @@ Mammal::Mammal() {
 }
 
 Mammal::~Mammal() {
-  cout << "A mammal has fallen!" << std::endl;
+  std::cout << "A mammal has fallen!" << std::endl;
 }
 
 void Mammal::breathe() {
   std::cout << "Breathe in... breathe out" << std::endl;
 }
 
-virtual void Mammal::talk() {
-  cout << "Mammal talk... override this function!" << std::endl;
+void Mammal::talk() {
+  std::cout << "Mammal talk... override this function!" << std::endl;
 }
