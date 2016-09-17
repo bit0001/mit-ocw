@@ -14,6 +14,7 @@ void Dog::talk() {
 }
 
 void Dog::walk() {
-  std::cout << "Left front paw and back right paw, right front paw and back left paw.. at the speed of " <<
-    speed << std::endl;
+  std::cout << "Left front paw and back right paw, "
+                "right front paw and back left paw.. "
+                "at the speed of " << speed << std::endl;
 }
